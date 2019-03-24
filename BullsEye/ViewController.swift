@@ -15,10 +15,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func showAlert() {
+    @IBAction func showHitMeAlert() {
         let alert = UIAlertController(title: "Hello World!", message: "This is my first App!", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func knockKnock() {
+        let alert = UIAlertController(title: "Knock knock", message: "Who is there?", preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: "Its me!", style: .default, handler: nil)
         
         alert.addAction(action)
         
