@@ -11,23 +11,30 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetValueLabel: UILabel!
+    @IBOutlet weak var scoreValueLabel: UILabel!
     
     let initialValue: Int = 50
+    let intialPoints: Int = 100
+    let initialScore: Int = 0
+    
     var currentValue: Int = 0
     var targetValue: Int = 0
+    var score: Int = 0
 
-    override func viewDidLoad() {
+    override func viewDidLoad() -> Void {
         super.viewDidLoad()
         getCurrentValueFromSlider()
+        initScore()
         startNewRound()
     }
     
-    @IBAction func onClickHitMe() {
+    @IBAction func onClickHitMe() -> Void {
+        setScore()
         hitMeShowAlert()
         startNewRound()
     }
     
-    func hitMeShowAlert() {
+    func hitMeShowAlert() -> Void {
         let message: String = "The value of the slider is now: \(currentValue)" +
         "\nThe target value was \(targetValue)"
         
@@ -40,27 +47,47 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func sliderMoved(_ slider: UISlider) {
+    @IBAction func sliderMoved(_ slider: UISlider) -> Void {
         getCurrentValueFromSlider()
     }
     
-    func getCurrentValueFromSlider () {
+    func getCurrentValueFromSlider () -> Void {
         currentValue = Int(slider.value.rounded())
     }
     
-    func initSliderValue() {
+    func initSliderValue() -> Void {
         currentValue = initialValue
         slider.value = Float(currentValue)
     }
     
-    func initTargetValue() {
+    func initTargetValue() -> Void {
         targetValue = Int.random(in: 1...100)
         targetValueLabel.text = String(targetValue)
     }
     
-    func startNewRound() {
+    func startNewRound() -> Void {
         initSliderValue()
         initTargetValue()
+    }
+    
+    func initScore() {
+        score = initialScore
+        refreshScoreLabel()
+    }
+    
+    func setScore() -> Void {
+        let difference: Int = abs(currentValue - targetValue)
+        score += calculateUserPoints(difference: difference)
+        refreshScoreLabel()
+    }
+    
+    func refreshScoreLabel() -> Void {
+        scoreValueLabel.text = String(score)
+    }
+    
+    func calculateUserPoints(difference: Int) -> Int {
+        let points = intialPoints - difference
+        return points
     }
 }
 
