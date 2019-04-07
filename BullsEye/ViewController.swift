@@ -10,16 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
+    let initialValue: Int = 50
     var currentValue: Int = 0
+    var targetValue: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentValue = Int(slider.value.rounded())
-        // Do any additional setup after loading the view, typically from a nib.
+        getCurrentValueFromSlider()
+        startNewRound()
     }
     
-    @IBAction func showHitMeAlert() {
-        let message: String = "The value of the slider is now: \(currentValue)"
+    @IBAction func onClickHitMe() {
+        hitMeShowAlert()
+        startNewRound()
+    }
+    
+    func hitMeShowAlert() {
+        let message: String = "The value of the slider is now: \(currentValue)" +
+        "\nThe target value is \(targetValue)"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         
@@ -31,8 +39,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
-        let roundedValue = slider.value.rounded()
-        currentValue = Int(roundedValue)
+        getCurrentValueFromSlider()
+    }
+    
+    func getCurrentValueFromSlider () {
+        currentValue = Int(slider.value.rounded())
+    }
+    
+    func initSliderValue() {
+        currentValue = initialValue
+        slider.value = Float(currentValue)
+    }
+    
+    func initTargetValue() {
+        targetValue = Int.random(in: 1...100)
+    }
+    
+    func startNewRound() {
+        initSliderValue()
+        initTargetValue()
     }
 }
 
