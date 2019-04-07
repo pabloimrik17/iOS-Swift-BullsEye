@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetValueLabel: UILabel!
+    
     let initialValue: Int = 50
     var currentValue: Int = 0
     var targetValue: Int = 0
@@ -27,7 +29,7 @@ class ViewController: UIViewController {
     
     func hitMeShowAlert() {
         let message: String = "The value of the slider is now: \(currentValue)" +
-        "\nThe target value is \(targetValue)"
+        "\nThe target value was \(targetValue)"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         
@@ -53,6 +55,7 @@ class ViewController: UIViewController {
     
     func initTargetValue() {
         targetValue = Int.random(in: 1...100)
+        targetValueLabel.text = String(targetValue)
     }
     
     func startNewRound() {
