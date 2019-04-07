@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         case NotClose = "Not even close..."
     }
     
+    enum BonusScoreEnum: Int {
+        case Perfect = 100
+        case AlmostPerfect = 50
+        case NoBonus = 0
+    }
+    
     let initialValue: Int = 50
     let intialPoints: Int = 100
     let initialScore: Int = 0
@@ -29,6 +35,7 @@ class ViewController: UIViewController {
     var currentValue: Int = 0
     var targetValue: Int = 0
     var score: Int = 0
+    var points: Int = 0
     var currentRound: Int = 0
     var difference: Int = 0
 
@@ -49,8 +56,7 @@ class ViewController: UIViewController {
     func hitMeShowAlert() -> Void {
         let title: String = getAlertTitlte()
         
-        let message: String = "The value of the slider is now: \(currentValue)" +
-        "\nThe target value was \(targetValue)"
+        let message: String = "You scored \(points) points"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -101,14 +107,14 @@ class ViewController: UIViewController {
         incrementRound()
     }
     
-    func initScore() {
+    func initScore() -> Void {
         score = initialScore
         refreshScoreLabel()
     }
     
     func setScore() -> Void {
         difference = abs(currentValue - targetValue)
-        score += calculateUserPoints(difference)
+        score += calculateUserPoints()
         refreshScoreLabel()
     }
     
@@ -116,22 +122,40 @@ class ViewController: UIViewController {
         scoreValueLabel.text = String(score)
     }
     
-    func calculateUserPoints(_ difference: Int) -> Int {
-        let points = intialPoints - difference
+    func calculateUserPoints() -> Int {
+        points = intialPoints - difference
+        
+        points += calculateBonusPoints()
+        
         return points
     }
     
-    func initRound() {
+    func calculateBonusPoints () -> Int {
+        let bonusPoints: Int
+        
+        switch difference {
+        case 0:
+            bonusPoints = BonusScoreEnum.Perfect.rawValue
+        case 1:
+            bonusPoints = BonusScoreEnum.AlmostPerfect.rawValue
+        default:
+            bonusPoints = BonusScoreEnum.NoBonus.rawValue
+        }
+        
+        return bonusPoints
+    }
+    
+    func initRound() -> Void {
         currentRound = initialRound
         refreshRoundLabel()
     }
     
-    func incrementRound() {
+    func incrementRound() -> Void {
         currentRound += 1
         refreshRoundLabel()
     }
     
-    func refreshRoundLabel() {
+    func refreshRoundLabel() -> Void {
         roundValueLabel.text = String(currentRound)
     }
 }
