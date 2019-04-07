@@ -12,19 +12,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetValueLabel: UILabel!
     @IBOutlet weak var scoreValueLabel: UILabel!
+    @IBOutlet weak var roundValueLabel: UILabel!
     
     let initialValue: Int = 50
     let intialPoints: Int = 100
     let initialScore: Int = 0
+    let initialRound: Int = 0
     
     var currentValue: Int = 0
     var targetValue: Int = 0
     var score: Int = 0
+    var currentRound: Int = 0
 
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
         getCurrentValueFromSlider()
         initScore()
+        initRound()
         startNewRound()
     }
     
@@ -68,6 +72,7 @@ class ViewController: UIViewController {
     func startNewRound() -> Void {
         initSliderValue()
         initTargetValue()
+        incrementRound()
     }
     
     func initScore() {
@@ -88,6 +93,20 @@ class ViewController: UIViewController {
     func calculateUserPoints(difference: Int) -> Int {
         let points = intialPoints - difference
         return points
+    }
+    
+    func initRound() {
+        currentRound = initialRound
+        refreshRoundLabel()
+    }
+    
+    func incrementRound() {
+        currentRound += 1
+        refreshRoundLabel()
+    }
+    
+    func refreshRoundLabel() {
+        roundValueLabel.text = String(currentRound)
     }
 }
 
