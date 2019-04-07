@@ -50,7 +50,6 @@ class ViewController: UIViewController {
     @IBAction func onClickHitMe() -> Void {
         setScore()
         hitMeShowAlert()
-        startNewRound()
     }
     
     func hitMeShowAlert() -> Void {
@@ -60,9 +59,12 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: {
+            action in self.startNewRound()
+        })
         
         alert.addAction(action)
+        
         
         present(alert, animated: true, completion: nil)
     }
@@ -157,6 +159,10 @@ class ViewController: UIViewController {
     
     func refreshRoundLabel() -> Void {
         roundValueLabel.text = String(currentRound)
+    }
+    
+    @IBAction func startOver () {
+        self.viewDidLoad()
     }
 }
 
