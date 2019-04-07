@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCA907CC225A524A007FFD9B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA907CB225A524A007FFD9B /* AboutViewController.swift */; };
 		FCCFDF292247EA7100C18010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCFDF282247EA7100C18010 /* AppDelegate.swift */; };
 		FCCFDF2B2247EA7100C18010 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCFDF2A2247EA7100C18010 /* ViewController.swift */; };
 		FCCFDF2E2247EA7100C18010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCFDF2C2247EA7100C18010 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FCA907CB225A524A007FFD9B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FCCFDF252247EA7100C18010 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCFDF282247EA7100C18010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCCFDF2A2247EA7100C18010 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		FCCFDF272247EA7100C18010 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				FCA907CB225A524A007FFD9B /* AboutViewController.swift */,
 				FCCFDF282247EA7100C18010 /* AppDelegate.swift */,
 				FCCFDF2A2247EA7100C18010 /* ViewController.swift */,
 				FCCFDF2C2247EA7100C18010 /* Main.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA907CC225A524A007FFD9B /* AboutViewController.swift in Sources */,
 				FCCFDF2B2247EA7100C18010 /* ViewController.swift in Sources */,
 				FCCFDF292247EA7100C18010 /* AppDelegate.swift in Sources */,
 			);

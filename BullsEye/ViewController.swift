@@ -41,11 +41,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
-        getCurrentValueFromSlider()
-        initScore()
-        initRound()
-        startNewRound()
-    }
+        startNewGame()    }
     
     @IBAction func onClickHitMe() -> Void {
         setScore()
@@ -161,8 +157,15 @@ class ViewController: UIViewController {
         roundValueLabel.text = String(currentRound)
     }
     
+    func startNewGame () {
+        getCurrentValueFromSlider()
+        initScore()
+        initRound()
+        startNewRound()
+    }
+    
     @IBAction func startOver () {
-        self.viewDidLoad()
+        startNewGame()
     }
 }
 
