@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC01BD9B225D3BC1000004F1 /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01BD9A225D3BC1000004F1 /* AboutAuthorViewController.swift */; };
 		FCA907CC225A524A007FFD9B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA907CB225A524A007FFD9B /* AboutViewController.swift */; };
 		FCCFDF292247EA7100C18010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCFDF282247EA7100C18010 /* AppDelegate.swift */; };
 		FCCFDF2B2247EA7100C18010 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCFDF2A2247EA7100C18010 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC01BD9A225D3BC1000004F1 /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
 		FCA907CB225A524A007FFD9B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FCCFDF252247EA7100C18010 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCFDF282247EA7100C18010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				FCCFDF2F2247EA7200C18010 /* Assets.xcassets */,
 				FCCFDF312247EA7200C18010 /* LaunchScreen.storyboard */,
 				FCCFDF342247EA7200C18010 /* Info.plist */,
+				FC01BD9A225D3BC1000004F1 /* AboutAuthorViewController.swift */,
 			);
 			path = BullsEye;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				FCA907CC225A524A007FFD9B /* AboutViewController.swift in Sources */,
 				FCCFDF2B2247EA7100C18010 /* ViewController.swift in Sources */,
 				FCCFDF292247EA7100C18010 /* AppDelegate.swift in Sources */,
+				FC01BD9B225D3BC1000004F1 /* AboutAuthorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
