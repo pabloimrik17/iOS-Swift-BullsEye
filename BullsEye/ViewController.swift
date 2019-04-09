@@ -41,16 +41,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
-        getCurrentValueFromSlider()
-        initScore()
-        initRound()
-        startNewRound()
-    }
+        startNewGame()    }
     
     @IBAction func onClickHitMe() -> Void {
         setScore()
         hitMeShowAlert()
-        startNewRound()
     }
     
     func hitMeShowAlert() -> Void {
@@ -60,9 +55,12 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: {
+            action in self.startNewRound()
+        })
         
         alert.addAction(action)
+        
         
         present(alert, animated: true, completion: nil)
     }
@@ -157,6 +155,17 @@ class ViewController: UIViewController {
     
     func refreshRoundLabel() -> Void {
         roundValueLabel.text = String(currentRound)
+    }
+    
+    func startNewGame () {
+        getCurrentValueFromSlider()
+        initScore()
+        initRound()
+        startNewRound()
+    }
+    
+    @IBAction func startOver () {
+        startNewGame()
     }
 }
 
