@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC00DAB6225E99CC00BF0E60 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = FC00DAB5225E99CC00BF0E60 /* BullsEye.html */; };
+		FC00DAB9225EA1B700BF0E60 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC00DAB8225EA1B700BF0E60 /* WebKit.framework */; };
 		FC01BD9B225D3BC1000004F1 /* AboutAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01BD9A225D3BC1000004F1 /* AboutAuthorViewController.swift */; };
 		FCA907CC225A524A007FFD9B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA907CB225A524A007FFD9B /* AboutViewController.swift */; };
 		FCCFDF292247EA7100C18010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCFDF282247EA7100C18010 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC00DAB5225E99CC00BF0E60 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
+		FC00DAB8225EA1B700BF0E60 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FC01BD9A225D3BC1000004F1 /* AboutAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorViewController.swift; sourceTree = "<group>"; };
 		FCA907CB225A524A007FFD9B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FCCFDF252247EA7100C18010 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC00DAB9225EA1B700BF0E60 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC00DAB7225EA1B700BF0E60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC00DAB8225EA1B700BF0E60 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FCCFDF1C2247EA7100C18010 = {
 			isa = PBXGroup;
 			children = (
 				FCCFDF272247EA7100C18010 /* BullsEye */,
 				FCCFDF262247EA7100C18010 /* Products */,
+				FC00DAB7225EA1B700BF0E60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +72,7 @@
 		FCCFDF272247EA7100C18010 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				FC00DAB5225E99CC00BF0E60 /* BullsEye.html */,
 				FCA907CB225A524A007FFD9B /* AboutViewController.swift */,
 				FCCFDF282247EA7100C18010 /* AppDelegate.swift */,
 				FCCFDF2A2247EA7100C18010 /* ViewController.swift */,
@@ -130,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCFDF332247EA7200C18010 /* LaunchScreen.storyboard in Resources */,
+				FC00DAB6225E99CC00BF0E60 /* BullsEye.html in Resources */,
 				FCCFDF302247EA7200C18010 /* Assets.xcassets in Resources */,
 				FCCFDF2E2247EA7100C18010 /* Main.storyboard in Resources */,
 			);
