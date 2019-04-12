@@ -41,16 +41,35 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() -> Void {
         super.viewDidLoad()
-        getCurrentValueFromSlider()
-        initScore()
-        initRound()
-        startNewRound()
+        startNewGame()
+        customizeUI()
+    }
+    
+    func customizeUI() {
+        customizeSlider()
+    }
+    
+    func customizeSlider() {
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlighted = #imageLiteral(resourceName: "SliderThumb-Highlighted")
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = #imageLiteral(resourceName: "SliderTrackLeft")
+        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        
+        let trackRightImage = #imageLiteral(resourceName: "SmallButton")
+        let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
     }
     
     @IBAction func onClickHitMe() -> Void {
         setScore()
         hitMeShowAlert()
-        startNewRound()
     }
     
     func hitMeShowAlert() -> Void {
@@ -60,9 +79,12 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: {
+            action in self.startNewRound()
+        })
         
         alert.addAction(action)
+        
         
         present(alert, animated: true, completion: nil)
     }
@@ -157,6 +179,17 @@ class ViewController: UIViewController {
     
     func refreshRoundLabel() -> Void {
         roundValueLabel.text = String(currentRound)
+    }
+    
+    func startNewGame () {
+        getCurrentValueFromSlider()
+        initScore()
+        initRound()
+        startNewRound()
+    }
+    
+    @IBAction func startOver () {
+        startNewGame()
     }
 }
 
